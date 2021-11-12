@@ -7,15 +7,6 @@
     <link rel="icon" href="<%= BASE_URL %>favicon-b.ico">
     <title>奢香阁后台管理平台</title>
     <link href="<%= webpackConfig.output.publicPath %>css/base.css" rel="stylesheet">
-    <script src="/api/v1/login/status"></script>
-    <script>
-        if (!window.__userHasLoggedIn) {
-          const url = window.location.pathname
-          if (url !== "/login") {
-            location.href = "/login"
-          }
-        }
-    </script>
   </head>
   <body>
     <noscript>

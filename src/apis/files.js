@@ -12,9 +12,6 @@ class File extends Base {
         return this.ajax({
             url: this.makeUrl(null, 'files'),
             method: 'post',
-            headers: {
-                token: this.getToken()
-            },
             data: {
                 filename,
                 prefix,
@@ -26,16 +23,12 @@ class File extends Base {
     delete (name) {
         return this.ajax({
             url: this.makeUrl(null, `files/${ name }`),
-            method: 'delete',
-            headers: {
-                token: this.getToken()
-            }
+            method: 'delete'
         }).then(this.successObject)
     }
 
     async baseInfo () {
         return {
-            token: this.getToken(),
             server: imgServer
         }
     }

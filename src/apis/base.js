@@ -1,8 +1,7 @@
 import query from 'qs'
-import cookieHelper from '../common/cookieHelper'
 import ajax from './ajax'
 
-const apiurl = '/api/v1' //后端api地址
+const apiurl = '/apis/v1' //后端api地址
 
 export default class Base {
     constructor (name) {
@@ -12,10 +11,6 @@ export default class Base {
         } else {
             this.base = `${ apiurl }`
         }
-    }
-
-    getToken () {
-        return cookieHelper.getCookie('token')
     }
 
     makeUrl (params, id) {
@@ -45,7 +40,6 @@ export default class Base {
             url: this.makeUrl(params.query, id),
             method: 'get',
             headers: {
-                token: this.getToken(),
                 ...params.headers
             }
         })
@@ -60,7 +54,6 @@ export default class Base {
             url: this.makeUrl(params.query),
             method: 'get',
             headers: {
-                token: this.getToken(),
                 ...params.headers
             }
         })
@@ -78,7 +71,6 @@ export default class Base {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
-                token: this.getToken(),
                 ...params.headers
             }
         })
@@ -94,7 +86,6 @@ export default class Base {
             url: this.makeUrl(params.query, id),
             method: 'delete',
             headers: {
-                token: this.getToken(),
                 ...params.headers
             }
         })
@@ -107,7 +98,6 @@ export default class Base {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json',
-                token: this.getToken(),
                 ...params.headers
             }
         })

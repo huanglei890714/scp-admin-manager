@@ -7,7 +7,6 @@ class ScpShopOrders extends Base {
             url: this.makeUrl(params, 'ext/shopOrders'),
             method: 'get',
             headers: {
-                token: this.getToken(),
                 ...params.headers
             }
         })
@@ -17,9 +16,6 @@ class ScpShopOrders extends Base {
         return this.ajax({
             url: this.makeUrl(null, 'ext/shopOrders/exit'),
             method: 'post',
-            headers: {
-                token: this.getToken()
-            },
             data
         })
     }

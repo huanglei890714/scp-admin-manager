@@ -91,7 +91,7 @@ export default {
                 // cookieHelper.delCookie('token')
                 const { name, pass } = this.loginForm
                 if (name !== '' && pass !== '') {
-                    const res = await this.$apis.backUser.login({ email: name, password: pass })
+                    const res = await this.$apis.backUser.login({ name, pass })
                     if (res.code === 200) {
                         this.$router.push({
                             name: 'Dashbord'

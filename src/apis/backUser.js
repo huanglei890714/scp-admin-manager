@@ -24,12 +24,12 @@ const has = function (data, keys) {
 
 class User extends Base {
     async login (data = {}) {
-        if (!has(data, ['email', 'password'])) {
+        if (!has(data, ['name', 'pass'])) {
             return Promise.reject(error(206))
         }
 
         return this.ajax({
-            url: this.makeUrl(null, 'login'),
+            url: this.makeUrl(null, 'back/scpAdminUsers/login'),
             method: 'post',
             data
         })

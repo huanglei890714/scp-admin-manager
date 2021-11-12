@@ -35,7 +35,7 @@ export default {
         return {
             upconf: {
                 accept: 'image/*',
-                action: 'http://127.0.0.1:7001/apis/v1/files'
+                action: 'http://127.0.0.1:8001/apis/v1/files'
             },
             server: '',
             token: {},

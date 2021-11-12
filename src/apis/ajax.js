@@ -1,7 +1,7 @@
 import axios from 'axios'
 import error from './error'
 
-const loginUrl = 'http://localhost:8081/login'
+const loginUrl = 'http://127.0.0.1:8081/login'
 
 const successData = function (res) {
     return res.data
